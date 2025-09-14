@@ -19,15 +19,13 @@ class StarRating {
   init() {
     this.el?.addEventListener("change", this.updateRating.bind(this));
 
-    // stop Firefox from preserving form data between refreshes
     try {
       this.el?.reset();
     } catch (err) {
-      console.error("Element isn’t a form.");
+      console.error("Element isn't a form.");
     }
   }
   updateRating(e) {
-    // clear animation delays
     Array.from(this.el.querySelectorAll(`[for*="rating"]`)).forEach((el) => {
       el.className = "rating__label";
     });
