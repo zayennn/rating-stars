@@ -38,7 +38,6 @@ class StarRating {
     this.ratings.forEach((rating) => {
       const { id } = rating;
 
-      // add the delays
       const ratingLabel = this.el.querySelector(`[for="rating-${id}"]`);
 
       if (id > prevRatingID + 1 && id <= this.rating.id) {
@@ -46,7 +45,6 @@ class StarRating {
         ratingLabel.classList.add(`rating__label--delay${delay}`);
       }
 
-      // hide ratings to not read, show the one to read
       const ratingTextEl = this.el.querySelector(`[data-rating="${id}"]`);
 
       if (this.rating.id !== id) ratingTextEl.setAttribute("hidden", true);
